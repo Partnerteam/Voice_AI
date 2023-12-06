@@ -65,7 +65,7 @@ def warn_alam():
 
 def ment_rec():             # 카카오i클라우드 'Text to Speech API'의 음성합성 기능을 이용해서 스피커 시작 멘트를 만듬
     voice = """ curl -v \
-              -H "x-api-key: 91ce013c97b577b8f4c8d354e675b883" \
+              -H "x-api-key: 91cXXXXXXXXXXXX5b883" \
               -H "Content-Type: application/xml" \
               -H "X-TTS-Engine: deep" \
               -d '<speak>
@@ -201,7 +201,7 @@ def mayday_speak():
     if GPIO.input(button_pin) == GPIO.LOW:
         return
     load_dotenv()
-    openai.organization = "org-oMb8n1ArLu6XkrsXxXNg9hQQ"                    # OpenAI API를 사용하기 위한 키값들 초기화
+    openai.organization = "org-XXXXXXXXX9hQQ"                    # OpenAI API를 사용하기 위한 키값들 초기화
     openai.api_key = os.getenv("OPENAI_API_KEY")                            # .env 파일에 작성한 API 키 가져오기
     openai.Model.list()
 
@@ -227,7 +227,7 @@ def chat_gpt_speak():
     if GPIO.input(button_pin) == GPIO.HIGH:
         return
     load_dotenv()
-    openai.organization = "org-oMb8n1ArLu6XkrsXxXNg9hQQ"                    # OpenAI API를 사용하기 위한 키값들 초기화
+    openai.organization = "org-XXXXXXXXXX9hQQ"                    # OpenAI API를 사용하기 위한 키값들 초기화
     openai.api_key = os.getenv("OPENAI_API_KEY")                            # .env 파일에 작성한 API 키 가져오기
     openai.Model.list()
 
@@ -251,7 +251,7 @@ def chat_gpt_speak():
     answer = response.choices[0]["message"]["content"].strip()         # 문자열로 응답을 받음
     print(answer)
     voice = """ curl -v \
-                  -H "x-api-key: 91ce013c97b577b8f4c8d354e675b883" \
+                  -H "x-api-key: 91cXXXXXXXXXXXXX883" \
                   -H "Content-Type: application/xml" \
                   -H "X-TTS-Engine: deep" \
                   -d '<speak>
