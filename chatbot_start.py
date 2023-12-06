@@ -267,10 +267,9 @@ if __name__ == "__main__":
     threading.Thread(target=start_alam).start()     # 스피커 시작 멘트
     time.sleep(8)
     threading.Thread(target=start_gpio).start()
-    time.sleep(3)
+    time.sleep(13)
 
     conversation = [{"role": "system", "content": "You are a helpful assistant."}]      # ChatGPT system 초기화
-    time.sleep(10)
     while True:
         if GPIO.input(button_pin) == GPIO.LOW:
             threading.Thread(target=motor_stop).start()           
@@ -283,4 +282,4 @@ if __name__ == "__main__":
                 threading.Thread(target=motor_stop).start()
             mayday_voice_rec()
             mayday_speak()
-            
+        time.sleep(5)    
